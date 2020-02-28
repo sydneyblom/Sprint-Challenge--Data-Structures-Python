@@ -41,7 +41,25 @@ class LinkedList:
       current = current.get_next()
     # if we've gotten here, then the target node isn't in our list
     return False
-
+# Inside of the reverse directory, you'll find a basic implementation of a Singly Linked List. 
+# Without making it a Doubly Linked List (adding a tail attribute), complete the reverse_list() function within reverse/reverse.py reverse the contents of the list.
+# For example,
+# 1->2->3->None
+# would become...
+# 3->2->1->None
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+    #current node to head and prev node to none
+    currentNode = self.head
+    prevNode = None
+    #current node is not none- itterate through list
+    while currentNode != None:
+          #store nextnode
+          nextNode = currentNode.get_next()
+          # set next of current node to prev node
+          currentNode.set_next(prevNode)
+          # set prev node to current node
+          prevNode = currentNode
+          # set current node to next node
+          currentNode = nextNode
+      # current node does equal none set head to prev node
+    self.head = prevNode 
